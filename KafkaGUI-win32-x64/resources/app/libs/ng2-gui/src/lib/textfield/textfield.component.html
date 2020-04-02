@@ -1,0 +1,10 @@
+<div class="textfield">
+  <input placeholder="" type="email" required
+    [disabled]="disabled"
+    (keyup)="onTextChanged()"
+    [(ngModel)]="text">
+  <div class="label"
+    [ngClass]="{ 'has-text': text !== '' && text !== undefined }">
+    <span>{{ label }}</span>
+  </div>
+</div>

@@ -1,0 +1,111 @@
+@import './../style.less';
+
+.toggle {
+  @font-size: 12px;
+  @size: 30px;
+  @margin: 0px;
+  display: flex;
+  align-items: center;
+
+  .off-side, .on-side {
+    font-size: 14px;
+    color: @normal-text-color;
+  }
+
+  .off-side {
+    margin-right: 15px;
+  }
+
+  .on-side {
+    margin-left: 15px;
+  }
+
+  .btn-toggle {
+    cursor: pointer;
+    margin: 0 @margin;
+    padding: 0;
+    position: relative;
+    border: none;
+    height: @size;
+    width: @size * 2;
+    border-radius: @size;
+    border-radius: 5px;
+
+    &:focus,
+    &.focus {
+      &,
+      &.active {
+        outline: none;
+      }
+    }
+
+    &:before,
+    &:after {
+      line-height: @size;
+      width: @margin;
+      text-align: center;
+      font-weight: 600;
+      // color: @color;
+      font-size: @font-size;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: absolute;
+      bottom: 0;
+      transition: opacity .25s;
+    }
+
+    &:before {
+      left: -@margin;
+    }
+
+    &:after {
+      right: -@margin;
+      opacity: .5;
+    }
+
+    > .handle {
+      position: absolute;
+      top: (@size * .25) / 2;
+      left: (@size * .25) / 2;
+      width: @size * .75;
+      height: @size * .75;
+      border-radius: @size * .75;
+      border-radius: 4px;
+      transition: left .25s;
+    }
+
+    &.active {
+      transition: background-color .25s;
+
+      > .handle {
+        transition: left .25s;
+      }
+
+      &:before {
+        opacity: .5;
+      }
+
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+
+  .btn-toggle.actived {
+    background-color: @active-block-background;
+
+    .handle {
+      left: @size + ((@size * .25) / 2);
+      background: white;
+    }
+  }
+
+  .btn-toggle.unactived {
+    background-color: @card-background;
+
+    .handle {
+      left: ((@size * .25) / 2);
+      background: @unactive-text-color;
+    }
+  }
+}

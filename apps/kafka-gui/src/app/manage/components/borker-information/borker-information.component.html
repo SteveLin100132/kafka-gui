@@ -1,0 +1,19 @@
+<div class="broker-information">
+  <h2 class="title">
+    <span>Broker </span> <span class="emphasize">Info</span>
+  </h2>
+
+  <!-- 頁籤內容切換 -->
+  <ng2-gui-tabset [tabsMaxWidth]="'100%'">
+    <ng2-gui-tabset-container [tab]="tabs[BROKER_INFO_TAB]">
+      <!-- Cluster資訊 -->
+      <kafka-gui-cluster-information>
+      </kafka-gui-cluster-information>
+    </ng2-gui-tabset-container>
+    <ng2-gui-tabset-container [tab]="tabs[TOPICS_INFO_TAB]">
+      <!-- Topics資訊 -->
+      <kafka-gui-topic-information>
+      </kafka-gui-topic-information>
+    </ng2-gui-tabset-container>
+  </ng2-gui-tabset>
+</div>

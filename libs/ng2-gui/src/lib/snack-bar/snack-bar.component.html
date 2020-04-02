@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="snack-bar">
+    <i class="fa {{ icon }}" [ngStyle]="{ 'color': color }"></i>
+    <p class="message">{{ message }}</p>
+    <ng2-gui-button
+      [style]="buttonStyle.COLOR"
+      [color]="'transparent'"
+      (click)="onSnackBarDone()">
+      <span [ngStyle]="{ 'color': color }">done</span>
+    </ng2-gui-button>
+  </div>
+</div>

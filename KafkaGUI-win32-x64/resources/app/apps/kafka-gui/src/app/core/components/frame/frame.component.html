@@ -1,0 +1,14 @@
+<div class="frame-container">
+  <div class="toolbar">
+    <div class="logo-icon"></div>
+    <div class="tool"></div>
+    <div class="control">
+      <div class="minimize control-icon" (click)="onMinimized()"></div>
+      <div class="maximize control-icon" (click)="onMaximized()"></div>
+      <div class="close control-icon" (click)="onAppClosed()"></div>
+    </div>
+  </div>
+  <div class="content">
+    <ng-content></ng-content>
+  </div>
+</div>

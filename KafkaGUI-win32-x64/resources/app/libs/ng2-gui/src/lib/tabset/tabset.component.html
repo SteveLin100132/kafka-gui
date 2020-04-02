@@ -1,0 +1,15 @@
+<div class="tabset">
+  <!-- 頁籤列 -->
+  <ng2-gui-tabs
+    [tabs]="tabs"
+    [width]="tabsMaxWidth"
+    (selected)="onActivedTagChanged($event)">
+  </ng2-gui-tabs>
+
+  <!-- 頁籤內容 -->
+  <div class="panel">
+    <div class="tab-container">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,117 @@
+@import './../../../shared/styles/global.less';
+
+.cluster-container {
+  width: 100%;
+  height: 100%;
+  padding-top: 25px;
+  position: relative;
+
+  .outer-scrollbar {
+    --scrollbar-thumb-color: rgba(255,255,255,0);
+    --scrollbar-thumb-hover-color: rgb(24,108,153,0);
+    --scroll-max-height: 400px;
+    width: 100%;
+    max-height: var(--scroll-max-height);
+
+    &:hover {
+      --scrollbar-thumb-color: rgba(255,255,255,0.2);
+      --scrollbar-thumb-hover-color: rgb(24,108,153,0.7);
+    }
+
+    .cluster-panel {
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+
+      ul {
+        width: 100%;
+        max-width: 249px;
+        position: relative;
+
+        li {
+          width: 100%;
+          position: relative;
+
+          .textfield {
+            top: 0;
+            display: block;
+            width: 100%;
+            height: 15px;
+            line-height:15px;
+            letter-spacing: 1px;
+            color: @normal-text-color;
+            font-family: '微軟正黑體';
+            position: relative;
+            outline: none;
+            border: none;
+            background-color: transparent;
+          }
+
+          .control {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            p {
+              text-align: center;
+              width: calc(100% - 50px);
+              padding-left: 50px;
+              font-size: 12px;
+              color: white;
+            }
+
+            .delete {
+              width: 25px;
+              cursor: pointer;
+              right: 20px;
+              font-size: 24px;
+              position: absolute;
+              color: @normal-text-color;
+            }
+          }
+        }
+      }
+    }
+
+    .add-broker-btn {
+      width: 100%;
+      max-width: 249px;
+      height: 50px;
+      display: block;
+      position: relative;
+    }
+
+    .setting-panel {
+      width: 100%;
+      max-width: 249px;
+      margin-top: 25px;
+
+      ng2-gui-toggle {
+        margin-bottom: 30px;
+        display: block;
+      }
+    }
+
+    .sasl-panel {
+
+      .textfied-group {
+        margin-top: 30px;
+
+        ng2-gui-textfield  {
+          width: 100%;
+          display: block;
+          margin-bottom: 30px;
+        }
+      }
+    }
+
+    .conntect-btn {
+      width: 100%;
+      max-width: 249px;
+      height: 50px;
+      display: block;
+      position: relative;
+    }
+  }
+}

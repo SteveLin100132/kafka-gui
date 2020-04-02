@@ -1,0 +1,30 @@
+<div class="card-list">
+  <div class="content-panel">
+    <div class="card-info">
+      <p class="card-title">{{ title }}</p>
+      <ng-content select=".card-content"></ng-content>
+    </div>
+    <div class="card-icon">
+      <div class="align-container">
+        <div class="icon" [ngClass]="{ 'none-control': !control }">
+          <i *ngIf="text === undefined" class="fa" [ngClass]="icon"></i>
+          <span *ngIf="text !== undefined">{{ text }}</span>
+        </div>
+        <div *ngIf="control"
+          class="control"
+          (click)="onControlButtonClicked()">
+          <i class="fa fa-ellipsis-v"
+            [ngClass]="{
+              'fa-ellipsis-v': !controlToggled,
+              'fa-chevron-right': controlToggled
+            }">
+          </i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="control-panel">
+    <ng-content select=".control"></ng-content>
+  </div>
+</div>

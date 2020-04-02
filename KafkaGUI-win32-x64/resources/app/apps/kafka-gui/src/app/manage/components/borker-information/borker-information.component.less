@@ -1,0 +1,42 @@
+@import './../../../shared/styles/global.less';
+
+.broker-information {
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+
+  .title {
+    width: 100%;
+    margin: 20px 0;
+    margin-top: 20px;
+    margin-top: 0px;
+    padding-left: 25px;
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: lighter;
+
+    span {
+      font-weight: lighter;
+      color: @normal-text-color;
+    }
+
+    .emphasize {
+      font-weight: bolder !important;
+      color: @active-text-color !important;
+    }
+  }
+
+  ng2-gui-tabset {
+    width: 100%;
+    padding: 0 25px;
+    display: block;
+
+    ng2-gui-tabset-container {
+
+      kafka-gui-cluster-information {
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+}

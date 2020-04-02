@@ -1,0 +1,85 @@
+<div class="cluster-container" (window:resize)="onResized()">
+  <ng-scrollbar class="outer-scrollbar">
+    <!-- Cluster資訊 -->
+    <div class="cluster-panel">
+      <ul>
+        <li style="margin-bottom: 20px;">
+          <ng2-gui-card-list
+            title="Name"
+            icon="fa-text-height"
+            [control]="false">
+            <input
+              type="text"
+              class="card-content textfield"
+              placeholder="Input...">
+          </ng2-gui-card-list>
+        </li>
+        <li *ngFor="let card of clusterCardList; let index = index;"
+          style="margin-bottom: 20px;">
+          <ng2-gui-card-list
+            [title]="card.title"
+            [icon]="card.icon"
+            [control]="card.control">
+            <input
+              type="text"
+              class="card-content textfield"
+              placeholder="Input...">
+            <div class="control">
+              <p>Remove This Cluster</p>
+              <i class="fa fa-trash-o delete"
+                (click)="onClusterDeleted(index)">
+              </i>
+            </div>
+          </ng2-gui-card-list>
+        </li>
+      </ul>
+    </div>
+    <ng2-gui-button
+      class="add-broker-btn"
+      [style]="buttonStyle.SLASH"
+      (click)="onAddClusterButtonClicked()">
+      + Add Cluster
+    </ng2-gui-button>
+
+    <!-- Schema Registry 設定 -->
+    <div class="schema-registry-panel setting-panel">
+      <ng2-gui-toggle
+        on="Enabled Schema Registry"
+        [(ngModel)]="schemaRegitsryEnabled">
+      </ng2-gui-toggle>
+      <ng2-gui-textfield
+        style="display: block; margin-top: 20px;"
+        label="Schema Registry"
+        [disabled]="!schemaRegitsryEnabled"
+        [(ngModel)]="schemaRegistryHost">
+      </ng2-gui-textfield>
+    </div>
+
+    <!-- SASL 設定 -->
+    <div class="sasl-panel setting-panel">
+      <ng2-gui-toggle
+        on="Enabled SASL Plain Text"
+        [(ngModel)]="saslEnabled">
+      </ng2-gui-toggle>
+      <div class="textfied-group">
+        <ng2-gui-textfield
+          label="USERNAME"
+          [disabled]="!saslEnabled"
+          [(ngModel)]="saslAccount.username">
+        </ng2-gui-textfield>
+        <ng2-gui-textfield
+          label="PASSWORD"
+          [disabled]="!saslEnabled"
+          [(ngModel)]="saslAccount.password">
+        </ng2-gui-textfield>
+      </div>
+    </div>
+
+    <!-- 連線 -->
+    <ng2-gui-button
+      class="conntect-btn"
+      [style]="buttonStyle.COLOR">
+      Connect
+    </ng2-gui-button>
+  </ng-scrollbar>
+</div>

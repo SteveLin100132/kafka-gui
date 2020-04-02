@@ -1,0 +1,17 @@
+<div class="tabs">
+  <ul
+    [ngStyle]="{
+      'max-width': width,
+      'grid-template-columns': 'repeat(' + tabs.length + ', 1fr)'
+    }">
+    <li class="tab"
+      *ngFor="let tab of tabs; let index = index;"
+      [ngStyle]="{ 'color': tab.actived ? '#1789C7' : '#9fa1af' }"
+      (click)="onTabClicked(index)">
+      <div class="inner">
+        <h3>{{ tab.title }}</h3>
+        <div [hidden]="!tab.actived" class="border"></div>
+      </div>
+    </li>
+  </ul>
+</div>

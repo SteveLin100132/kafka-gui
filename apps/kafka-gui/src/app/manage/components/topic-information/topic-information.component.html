@@ -1,0 +1,55 @@
+<div class="topic-container" (window:resize)="onResized()">
+  <!-- 過濾輸入欄位 -->
+  <ng2-gui-textfield
+    class="filter-textfield"
+    label="Search"
+    [(ngModel)]="filterTopic">
+  </ng2-gui-textfield>
+
+  <!-- Topic列表 -->
+  <ng-scrollbar class="outer-scrollbar"
+    [ngClass]="{ 'hidden-scrollbar': topicCreatedStatus }">
+    <div class="topic-panel">
+      <ul>
+        <li style="margin-bottom: 20px;"
+          *ngFor="let topic of topics"
+          [attr.hidden]="!topic.topic.match(filterTopic) ? true : null">
+          <ng2-gui-card-list
+            title="Topic"
+            [text]="topic.partition"
+            [control]="true">
+            <p class="card-content topic-title">
+              {{ topic.topic | contentAbbreviation:20 }}
+            </p>
+          </ng2-gui-card-list>
+        </li>
+      </ul>
+    </div>
+  </ng-scrollbar>
+
+  <!-- 新增Topic按鈕 -->
+  <ng2-gui-button
+    class="create-btn"
+    [style]="buttonStyle.SLASH"
+    (click)="onCreateTopicClicked()">
+    + Create Topic
+  </ng2-gui-button>
+
+  <!-- 新增Topic面板 -->
+  <div class="topic-edit-panel"
+    *ngIf="topicCreatedStatus">
+    <ng2-gui-textfield
+      class="topic-name"
+      label="Topic Name">
+    </ng2-gui-textfield>
+    <ng2-gui-textfield
+      class="topic-partition"
+      label="Partition">
+    </ng2-gui-textfield>
+    <ng2-gui-button
+      class="topic-create-btn"
+      [style]="buttonStyle.COLOR">
+      Create
+    </ng2-gui-button>
+  </div>
+</div>

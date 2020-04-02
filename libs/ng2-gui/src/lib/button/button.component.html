@@ -1,0 +1,12 @@
+<div class="button" [ngClass]="styleMap[style]"
+  [ngStyle]="{
+    'background-color': style === styleType.COLOR ? color: 'transparent'
+  }">
+  <div class="content">
+    <ng2-gui-loading-spinner class="loading"
+      *ngIf="loading">
+    </ng2-gui-loading-spinner>
+    <ng-content *ngIf="!loading"></ng-content>
+  </div>
+  <div class="background"></div>
+</div>

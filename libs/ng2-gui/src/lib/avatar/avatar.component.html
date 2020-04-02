@@ -1,0 +1,10 @@
+<div class="avatar">
+  <div *ngIf="icon === undefined" class="text">
+    {{ text | avatarShortText }}
+  </div>
+  <div *ngIf="icon !== undefined" class="icon">
+    {{ icon }}
+  </div>
+
+  <div class="background"></div>
+</div>

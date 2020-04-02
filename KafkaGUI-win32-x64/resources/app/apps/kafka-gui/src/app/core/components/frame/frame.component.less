@@ -1,0 +1,69 @@
+@import './../../../shared/styles/global.less';
+
+.frame-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 35px 1fr;
+  position: relative;
+
+  .toolbar {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    border-bottom: 1px solid @panel-border-color;
+    background-color: var(--root-background);
+    -webkit-app-region: drag;
+
+    .logo-icon {
+      width: 35px;
+      height: 35px;
+      float: left;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 15px;
+      background-image: url('./../../../../assets/icons/kagka-gui-icon.png');
+    }
+
+    .tool {
+      float: left;
+    }
+
+    .control {
+      float: right;
+      height: 100%;
+
+      .control-icon {
+        float: left;
+        width: 40px;
+        height: 100%;
+        background-color: transparent;
+        background-size: 16px;
+        background-position: center;
+        background-repeat: no-repeat;
+        -webkit-app-region: none;
+        .transition-duration(100ms);
+
+        &:hover {
+          background-color: rgba(100,100,100,0.2);
+        }
+      }
+
+      .minimize {
+        background-image: url('./../../../../assets/icons/minimize.png');
+      }
+
+      .maximize {
+        background-image: url('./../../../../assets/icons/maximize.png');
+      }
+
+      .close {
+        background-image: url('./../../../../assets/icons/close.png');
+
+        &:hover {
+          background-color: rgba(202, 35, 48, 0.8);
+        }
+      }
+    }
+  }
+}

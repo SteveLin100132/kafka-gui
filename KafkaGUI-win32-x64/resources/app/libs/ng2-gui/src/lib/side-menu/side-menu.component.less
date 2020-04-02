@@ -1,0 +1,69 @@
+@import './../style.less';
+
+.side-menu {
+  width: inherit;
+  height: inherit;
+  position: relative;
+
+  .branch {
+    padding-top: 15px;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 40px;
+
+    a {
+      width: 100%;
+      height: 50px;
+      display: block;
+      text-align: center;
+    }
+  }
+
+  .scrollbar {
+    --scrollbar-thumb-color: rgba(255,255,255,0);
+    --scrollbar-thumb-hover-color: rgb(24,108,153,0);
+
+    &:hover {
+      --scrollbar-thumb-color: rgba(255,255,255,0.2);
+      --scrollbar-thumb-hover-color: rgb(24,108,153,0.7);
+    }
+  }
+
+  ul {
+
+    .menu-item {
+      cursor: pointer;
+      overflow: hidden;
+      width: 100%;
+      height: 65px;
+      padding-left: 15px;
+      display: flex;
+      align-items: center;
+
+      a {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        border-right: 4px solid transparent;
+        .transition-duration(200ms);
+
+        ng2-gui-avatar {
+          margin-right: 10px;
+        }
+
+        .link-text {
+          color: @normal-text-color;
+          font-size: 12px;
+          letter-spacing: 1px;
+          white-space: nowrap;
+        }
+      }
+
+      a.actived {
+        // border-right: 4px solid @active-block-background;
+        border-right: 4px solid transparent;
+      }
+    }
+  }
+}

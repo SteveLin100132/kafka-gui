@@ -1,0 +1,23 @@
+<div class="side-menu">
+  <div class="branch">
+    <a [href]="branch?.link">
+      <img alt="logo" width="50%" [src]="branch?.src">
+    </a>
+  </div>
+  <ng-scrollbar class="scrollbar" style="max-height: 325px;">
+    <ul>
+      <li *ngFor="let item of items; let index = index;" class="menu-item"
+        (click)="onItemSelected(index)">
+        <a [ngClass]="{ 'actived': item.actived }" >
+          <ng2-gui-avatar [text]="item.title"
+            [actived]="item.actived">
+          </ng2-gui-avatar>
+          <span class="link-text">
+            {{ item.title }}
+          </span>
+        </a>
+      </li>
+    </ul>
+  </ng-scrollbar>
+  <ng-content></ng-content>
+</div>

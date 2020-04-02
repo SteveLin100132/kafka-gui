@@ -1,0 +1,38 @@
+<div class="data-center">
+  <!-- 標頭：Broker資訊 -->
+  <header>
+    <h2 class="borker-name">
+      Borker
+      <span>WKS.PRD</span>
+    </h2>
+
+    <ul class="cluster-info">
+      <li>
+        <span class="label">Host</span>
+        <span class="content">
+          localhost:9092,localhost:9093,localhost:9094
+        </span>
+        <i class="fa fa-files-o"></i>
+      </li>
+      <li>
+        <span class="label">Schema</span>
+        <span class="content">
+          wks.cim.m1.femii.apportion-value
+        </span>
+        <i class="fa fa-files-o"></i>
+      </li>
+    </ul>
+  </header>
+
+  <!-- 頁籤內容切換 -->
+  <ng2-gui-tabset [tabsMaxWidth]="'250px'">
+    <ng2-gui-tabset-container [tab]="tabs[CONSUMER_TAB]">
+      <!-- Consumer -->
+      <kafka-gui-connect-hint></kafka-gui-connect-hint>
+    </ng2-gui-tabset-container>
+    <ng2-gui-tabset-container [tab]="tabs[PRODUCER_TAB]">
+      <!-- Producer -->
+      <kafka-gui-connect-hint></kafka-gui-connect-hint>
+    </ng2-gui-tabset-container>
+  </ng2-gui-tabset>
+</div>

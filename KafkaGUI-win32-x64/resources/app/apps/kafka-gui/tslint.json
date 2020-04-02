@@ -1,0 +1,7 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [true, "attribute", "kafkaGui", "camelCase"],
+    "component-selector": [true, "element", "kafka-gui", "kebab-case"]
+  }
+}

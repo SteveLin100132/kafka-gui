@@ -1,0 +1,42 @@
+@import './../shared/styles/global.less';
+
+.main-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+
+  .side-menu {
+    border-right: 1px solid @panel-border-color;
+    background-color: var(--root-background);
+
+    ng2-gui-side-menu {
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: relative;
+
+      .add-brokers-btn {
+        cursor: pointer;
+        bottom: 0px;
+        height: 80px;
+        padding-left: 15px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+
+        ng2-gui-avatar {
+          display: block;
+          margin-right: 10px;;
+        }
+
+        span {
+          font-size: 16px;
+          font-weight: bolder;
+          color: @normal-text-color;
+        }
+      }
+    }
+  }
+}

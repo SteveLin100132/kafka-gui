@@ -1,0 +1,19 @@
+<div class="toggle">
+  <div class="off-side" *ngIf="off !== undefined"
+    [ngStyle]="{ 'color': state ? '#9fa1af' : 'white' }">
+    {{ off }}
+  </div>
+  <button
+    type="button"
+    class="btn btn-toggle active"
+    data-toggle="button"
+    autocomplete="off"
+    [ngClass]="{ 'actived': state, 'unactived': !state }"
+    (click)="switch()">
+    <div class="handle"></div>
+  </button>
+  <div class="on-side" *ngIf="on !== undefined"
+    [ngStyle]="{ 'color': state ? 'white' : '#9fa1af' }">
+    {{ on }}
+  </div>
+</div>

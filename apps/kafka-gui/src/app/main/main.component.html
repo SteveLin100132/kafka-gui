@@ -1,0 +1,14 @@
+<div class="main-container" Ng2GuiSnackBarContainer>
+  <div class="side-menu">
+    <ng2-gui-side-menu [branch]="branch"
+      [items]="sideMenuList">
+      <div class="add-brokers-btn" (click)="addBroker()">
+        <ng2-gui-avatar text="+"></ng2-gui-avatar>
+        <span>Add Borkers</span>
+      </div>
+    </ng2-gui-side-menu>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
